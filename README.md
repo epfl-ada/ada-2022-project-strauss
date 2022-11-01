@@ -1,0 +1,1 @@
+# Strauss team ADA project repo
