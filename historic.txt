@@ -1,0 +1,20 @@
+To do (after) session on 01/11/2022
+
+- discuss Manoel's response
+- read the paper 
+
+
+(to do on the long term)
+-> redefine our dataset, delete unnecessary rows or columns to have a minimal size dataset easier to work with
+
+-> cleaning data 
+-is the format uniform
+-are there missing values?
+-if there are how should we handle them? how are they coded?
+-are there outliers? How should we deal with them?
+
+->visualizing data
+- to understand the dataset, do boxplots, histograms
+- see if there's relationship btw the data to clean our dataset even further 
+
+In the Readme, write clear steps of how are we gonna conduct our analysis, e.g in the cluster method explain step by step how are we going to implement 
