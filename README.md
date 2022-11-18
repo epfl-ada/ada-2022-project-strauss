@@ -10,15 +10,15 @@ As reported by the [New York Times Magazine](https://www.nytimes.com/2017/08/03/
 - How does toxicity level evolve through time among these communities?
 - Are toxicity scores and popularity correlated?
 #### Clusters
+- How influential are the clustered channels?
+- How tight-knit are the channels of interest?
 - How toxic are the found clusters?
-- [TO BE FILLED]
     
 ## Proposed additional datasets 
 We will base the list of far-right ideology channels on the study [“Auditing Radicalization Pathways on Youtube”, made in 2020 by Ribeiro et al](https://dlab.epfl.ch/people/west/pub/HortaRibeiro-Ottoni-West-Almeida-Meira_FAT-20.pdf). Moreover, we will use from their [data](https://drive.google.com/drive/folders/10r7nMK0-LAIfZws_jk2IpNdsWcrm-oOg?usp=share_link):
 - The **vd folder**: datasets with a description of the videos (their `channel_id`, `uploaded date`…) 
 - The **cm folder**: datasets about the comments on each video ( `id`, `author`, `author_link`, `authorThumb`, `text`, `likes`, `time`, `edited`, `timestamp`, `hasReplies`).
-
-[DATASET FOR CLUSTER: TO BE FILLED]
+Youniverse dataset : youtube...
 
 ## Methods
 ### Toxicity
