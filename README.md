@@ -51,7 +51,7 @@ We will first create a graph adjacency matrix for a weighted graph (using the da
 
 To create the matrix, the file `youtube_comments.tsv.gz` will be used. As this is a big data file (8.7 billion comments and over 200 GB uncompressed), the file can’t be open or used with a python script as it is.  To process this data, a C++ script is used to create 2 files:
 1. **`Comment_file`**: a binary file which has `channel_index` (not ID but an integer representing the channel from the index of `df_timeseries_en.tsv.gz`) and a `comment_count` (it indicates how many times a user has commented on the videos of a particular channel);
-2. **`Position_file`**: a file with the memory location of the index corresponding to the author's comments in `Comment_file`. If in `Position_file` the author "20" is associated to the memory offset 4, then their comments' data is stored in the line with index 4 in `Comment_file`. 
+2. **`Position_file`**:  a file with the memory locations of where different authors start in the binary file (if in that index file at position 20 it says 4, that means that for author with id 4, his comments start at position 20 of that other file)
 
 <p align="center">
  <img src="./Figures/table_cluster.png"" alt="Table cluster" width=500"/>
