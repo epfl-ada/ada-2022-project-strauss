@@ -1,4 +1,4 @@
-# Youtube’s Toxic Rabitholes
+# Youtube’s Toxic Rabbitholes
 
 ## Abstract
 
