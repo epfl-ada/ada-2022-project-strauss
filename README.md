@@ -24,6 +24,9 @@ To deal with the comments’ dataset size (20.6 Go), we can use a cluster. We �
 
 **Detoxify** is a machine learning model which rates on a scale from 0 to 1 (0 not at all, 1 very much) a comment to detect if it is toxic or not and to detect if it fits into these subcategories of toxicity: `severe_toxicity`, `obscene`, `identity_attack`, `insult`, `threat`, `sexual_explicit`. A comment is rated 1 in toxicity if it is a very ‘hateful, aggressive, or disrespectful that is very likely to make you leave a discussion or give up on sharing your perspective’. For our analysis, we will keep the toxic category and all of the subcategories as they are independently defined. We’ll store them in a dataframe where the first column is the name of the video and the other columns correspond to the category's score output by detoxify.
 
+<p align="center">
+ <img src="./Figures/table_toxicity.jpg"" alt="Table toxicity" width=500"/>
+</p>
 
 We’ll denote the `toxic_score_array` of a comment, its array output by detoxify through all categories.
 
