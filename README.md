@@ -73,7 +73,7 @@ To analyze the weighted graph, two measures will be used:
 
 ## Proposed timeline
 <p align="center">
- <img src="./Figures/timeline2.png" alt="timeline" width=500"/>
+ <img src="./Figures/timeline2.png" alt="timeline" width=650"/>
 </p>
 
 
