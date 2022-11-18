@@ -40,7 +40,30 @@ We’ll check how the `toxic_score_array` of the videos is distributed per commu
 Finally we’ll do an analysis over time. We will study the evolutions of the averages (and the distribution) in the `toxic_score_array` of the videos/channels over time. To study this development over time, we’ll group our videos per month based on the upload date.
 
 ### Clusters
-[TO BE FILLED]
+#### Structure of the cluster graph
+The graph will be structure as this:
+- The nodes are the channel id (given in the `youtube_comments.tsv.gz`)
+- The link between the nodes is assigned with an integer number; this number corresponds to the number of users that have commented on videos on both channels (at each end of the link). If this number is 0, there is no link between the channels.
+We will first try to create a graph adjacency matrix for a weighted graph using of the data (137k channel and 449M users) to study the interaction between channel communities.
+
+The size of this matrix is 137’000*137’000*32 bits = 75GB, which is manageable using a server. If not, it’s possible to reduce the size by selecting the most relevant channels.
+
+#### Manage and process the files
+To create the matrix, the file `youtube_comments.tsv.gz` will be used. As this is a bid data file (8.7 billion comments and over 200 GB uncompressed), the file can’t be open or used with a python script as is it.  To process this data, a C++ script is used to create 2 files:
+1. **Comment_file**: a binary file which has `chanel_index` (not ID but an integer representing the chanel from the index of `df_timeseries_en.tsv.gz`) and a `comment_count` (it indicates how many times a user has commented on the videos of a particular channel);
+2. **Location_file**: a file with the memory locations of where different authors start in the binary file (if in that index file at position 20 it says 4, that means that for author with id 4, his comments start at position 20 of that other file).
+
+[INSERT IMAGE TABLE]
+
+With these two tables a bipartite graph is constructed.
+The goal is to collapse that graph into a weighted channel graph by building the adjacency matrix above.
+[INSERT IMAGE BYPARTITE GRAPH]
+
+#### Study of the graph
+To analyze the weighted graph, two measures will be used:
+1. **Betweenness centrality**: measure of the importance of the channels. A channel with a high betweenness centrality has a lot of control in the network (`networkx` library on python);
+2. **Clustering coefficient**: the local and global clustering coefficient are both going to be study, to see if the graph is a small-world network, at least locally.
+
 
 
 ## Proposed timeline
