@@ -18,6 +18,8 @@ We will base the list of far-right ideology channels on the study [“Auditing R
 - The **vd folder**: datasets with a description of the videos (their `channel_id`, `uploaded date`…) 
 - The **cm folder**: datasets about the comments on each video ( `id`, `author`, `author_link`, `authorThumb`, `text`, `likes`, `time`, `edited`, `timestamp`, `hasReplies`).
 
+[DATASET FOR CLUSTER: TO BE FILLED]
+
 ## Methods
 ### Toxicity
 To deal with the comments’ dataset size (20.6 Go), we can use a cluster. We ‘ll also keep only the strictly necessary data from it (out of all the features we’ll only keep the `text`). If using a cluster does not work, we can use the Monte Carlo method.   
