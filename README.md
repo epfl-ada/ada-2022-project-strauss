@@ -2,11 +2,11 @@
 
 ## Abstract
 
-As reported by the [New York Times Magazine](https://www.nytimes.com/2017/08/03/magazine/for-the-new-far-right-youtube-has-become-the-new-talk-radio.html) in 2017, YouTube has become "the new Conservative talk radio" for the far right. Moreover, in 2019, [Kevin Roose depicted](https://www.nytimes.com/interactive/2019/06/08/technology/youtube-radical.html) "countless" stories of young men, looking for direction or distraction on YouTube, ending up "seduced by a community of far-right creators". The existence of a radicalization pipeline on Youtube was strongly suggested by the study [“Auditing Radicalization Pathways on Youtube”, by Ribeiro et al. (2020)](https://dlab.epfl.ch/people/west/pub/HortaRibeiro-Ottoni-West-Almeida-Meira_FAT-20.pdf). In particular, intersections of commenting users across different communities were inspected, as well as users migration. From there, we would like to enlarge the scope of this research by studying the toxicity of the comments and the co-commenting activities in far right channel videos. Doing so, we would like to see if these channels generate more toxic behavior and isolate users. Finally, this project could help find suitable solutions in order to reduce toxicity and attenuate far-right radicalization.
+As reported by the [New York Times Magazine](https://www.nytimes.com/2017/08/03/magazine/for-the-new-far-right-youtube-has-become-the-new-talk-radio.html) in 2017, YouTube has become "the new Conservative talk radio" for the far right. Moreover, in 2019, [Kevin Roose depicted](https://www.nytimes.com/interactive/2019/06/08/technology/youtube-radical.html) "countless" stories of young men, looking for direction or distraction on YouTube, ending up "seduced by a community of far-right creators". The existence of a radicalization pipeline on Youtube was strongly suggested by the study [“Auditing Radicalization Pathways on Youtube”, by Ribeiro et al. (2020)](https://dlab.epfl.ch/people/west/pub/HortaRibeiro-Ottoni-West-Almeida-Meira_FAT-20.pdf). From there, we would like to enlarge the scope of this research by studying the toxicity of the comments and the co-commenting activities in far right channel videos. Doing so, we would like to see if these channels generate more toxic behavior and isolate users. Finally, this project could help find suitable solutions in order to reduce toxicity and attenuate far-right radicalization.
 
 ## Research questions
 #### Toxicity
-- How toxic are the Alt-lite, Intellectual Dark Web (I.D.W) and Alt-right communities, compared to the control group Media?
+- How toxic are the Alt-lite, Intellectual Dark Web (I.D.W.) and Alt-right communities, compared to the control group Media?
 - How does toxicity level evolve through time among these communities?
 - Are toxicity scores and popularity correlated?
 #### Clusters
@@ -16,10 +16,10 @@ As reported by the [New York Times Magazine](https://www.nytimes.com/2017/08/03/
     
 ## Proposed additional datasets 
 We will base the list of far-right ideology channels on the study [“Auditing Radicalization Pathways on Youtube”](https://dlab.epfl.ch/people/west/pub/HortaRibeiro-Ottoni-West-Almeida-Meira_FAT-20.pdf), made in 2020 by Ribeiro et al. Moreover, for the toxicity level, we will use from their [data](https://drive.google.com/drive/folders/10r7nMK0-LAIfZws_jk2IpNdsWcrm-oOg?usp=share_link):
-- The **vd folder**: datasets with a description of the videos (their `channel_id`, `uploaded date`…); 
-- The **cm folder**: datasets about the comments on each video ( `id`, `author`, `author_link`, `authorThumb`, `text`, `likes`, `time`, `edited`, `timestamp`, `hasReplies`).  
+- The **vd folder**: description of the videos;
+- The **cm folder**: comments on each video.  
 
-For the clusters, the [YouNiverse dataset](https://zenodo.org/record/4650046#.Y3eNQceZO3-) will be used, especially:
+For clusters, the [YouNiverse dataset](https://zenodo.org/record/4650046#.Y3eNQceZO3-) will be used, especially:
 - `the youtube_comments.tsv.gz`;
 - `df_timeseries_en.tsv.gz`.
 
@@ -43,7 +43,6 @@ We’ll check how the `toxic_score_array` of the videos is distributed per commu
 Finally we’ll do an analysis over time. We will study the evolutions of the averages (and the distribution) in the `toxic_score_array` of the videos/channels over time. To study this development over time, we’ll group our videos per month based on the upload date.
 
 ### Clusters
-#### Structure of the cluster graph
 The graph will be structure as this:
 - The nodes are the channel ID (given in the `youtube_comments.tsv.gz`)
 - The link between the nodes is assigned with an integer number; this number corresponds to the number of users that have commented on videos on both channels (at each end of the link). If this number is 0, there is no link between the channels.
@@ -51,7 +50,6 @@ We will first try to create a graph adjacency matrix for a weighted graph using 
 
 The size of this matrix is 137’000 \* 137’000 \* 32 bits = 75GB, which is manageable using a server. If not, it’s possible to reduce the size by selecting the most relevant channels.
 
-#### Manage and process the files
 To create the matrix, the file `youtube_comments.tsv.gz` will be used. As this is a big data file (8.7 billion comments and over 200 GB uncompressed), the file can’t be open or used with a python script as it is.  To process this data, a C++ script is used to create 2 files:
 1. **Comment_file**: a binary file which has `channel_index` (not ID but an integer representing the channel from the index of `df_timeseries_en.tsv.gz`) and a `comment_count` (it indicates how many times a user has commented on the videos of a particular channel);
 2. **Location_file**: a file with the memory locations of where different authors start in the binary file (if in that index file at position 20 it says 4, that means that for author with id 4, his comments start at position 20 of that other file).
@@ -68,7 +66,6 @@ The goal is to collapse that graph into a weighted channel graph by building the
  <img src="./Figures/graph_cluster.jpg" alt="graph cluster" width=200"/>
 </p>
 
-#### Study of the graph
 To analyze the weighted graph, two measures will be used:
 1. **Betweenness centrality**: measure of the importance of the channels. A channel with a high betweenness centrality has a lot of control in the network (`networkx` library on python);
 2. **Clustering coefficient**: the local and global clustering coefficient are both going to be study, to see if the graph is a small-world network, at least locally.
@@ -76,26 +73,26 @@ To analyze the weighted graph, two measures will be used:
 
 
 ## Proposed timeline
-- 22 Nov 2022: 
+- 22.11.2022: 
     - Toxicity: format the data 
     - Cluster: generate a complete graph
-- 02 Dec 2022: 
+- 02.12.2022: 
     - **Homework 2**
-- 06 Dec 2022: 
+- 06.12.2022: 
     - Toxicity: parallelize the ML process and store the data in a table
     - Cluster: computing betweenness centrality
-- 08 Dec 2022:
+- 08.12.2022:
     - Toxicity: study the distribution of the table
     - Cluster: implement and compute min-cut on channels of interest
-- 13 Dec 2022: 
+- 13.12.2022: 
     - Compute how toxic are the clusters
-- 15 Dec 2022: 
+- 15.12.2022: 
     - Complete implementations and visualizations
-- 20 Dec 2022: 
+- 20.12.2022: 
     - Complete datastory
-- 23 Dec 2022: 
+- 23.12.2022: 
     - **Project milestone P3**
 
-## Organization within the team
+## Organization
 Armelle & Anya: toxicity  
 Bartul & Ariane: cluster
