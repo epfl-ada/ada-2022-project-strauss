@@ -43,7 +43,7 @@ Finally we’ll do an analysis over time. We will study the evolutions of the av
     - toxicity: format the data 
     - cluster: generate a complete graph
 - 02 Dec 2022: 
-    - **homework 2 deadline**
+    - **homework 2**
 - 06 Dec 2022: 
     - toxicity: parallelize the ML process and store the data in a table
     - cluster: computing betweenness centrality
