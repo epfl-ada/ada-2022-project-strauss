@@ -58,7 +58,7 @@ To create the matrix, the file `youtube_comments.tsv.gz` will be used. As this i
 </p>
 
 
-We'll construct a bipartite graph with these two tables a bipartite graph.
+We'll construct a bipartite graph with these two tables.
 The goal is to collapse that graph into a weighted channel graph by building the adjacency matrix mentioned earlier.
 
 <p align="center">
