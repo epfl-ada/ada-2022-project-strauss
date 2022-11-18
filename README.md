@@ -72,25 +72,10 @@ To analyze the weighted graph, two measures will be used:
 
 
 ## Proposed timeline
-- 22.11.2022: 
-    - Toxicity: format the data 
-    - Cluster: generate a complete graph
-- 02.12.2022: 
-    - **Homework 2**
-- 06.12.2022: 
-    - Toxicity: parallelize the ML process and store the data in a table
-    - Cluster: computing betweenness centrality
-- 08.12.2022:
-    - Toxicity: study the distribution of the table
-    - Cluster: implement and compute min-cut on channels of interest
-- 13.12.2022: 
-    - Compute how toxic are the clusters
-- 15.12.2022: 
-    - Complete implementations and visualizations
-- 20.12.2022: 
-    - Complete datastory
-- 23.12.2022: 
-    - **Project milestone P3**
+<p align="center">
+ <img src="./Figures/timeline.png" alt="timeline" width=500"/>
+</p>
+
 
 ## Organization
 Armelle & Anya: toxicity  
