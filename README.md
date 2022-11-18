@@ -25,7 +25,7 @@ For clusters, the [YouNiverse dataset](https://zenodo.org/record/4650046#.Y3eNQc
 
 ## Methods
 ### Toxicity
-To deal with the comments’ dataset size (20.6 Go), we can use a cluster. We ‘ll also keep only the strictly necessary data from it (out of all the features we’ll only keep the `text`). If using a cluster does not work, we can use the Monte Carlo method.   
+To deal with the comments’ dataset size (20.6 Go), we can use a cluster. We'll also restrict our number of features by only keeping the comment string. If using a cluster doesn't work, we can use the Monte Carlo method.   
 
 [`Detoxify`](https://github.com/unitaryai/detoxify) is a machine learning model which rates the toxicity of a comment on a scale from 0 to 1 (0 not at all, 1 very much). Furthermore,  it detects if it fits into these subcategories of toxicity: `severe_toxicity`, `obscene`, `identity_attack`, `insult`, `threat`, `sexual_explicit`. A comment is rated 1 in toxicity if it is a very ‘hateful, aggressive, or disrespectful that is very likely to make you leave a discussion or give up on sharing your perspective’. For our analysis, we will keep the toxic category and all of the subcategories as they are independently defined. We’ll store them in a dataframe where the first column is the name of the video and the other columns correspond to the category's score output by detoxify.
 
@@ -43,12 +43,11 @@ We’ll check how the `toxic_score_array` of the videos is distributed per commu
 Finally we’ll do an analysis over time. We will study the evolutions of the averages (and the distribution) in the `toxic_score_array` of the videos/channels over time. To study this development over time, we’ll group our videos per month based on the upload date.
 
 ### Clusters
-The graph will be structure as this:
+We will create a graph where:
 - The nodes are the channel ID (given in the `youtube_comments.tsv.gz`)
-- The link between the nodes is assigned with an integer number; this number corresponds to the number of users that have commented on videos on both channels (at each end of the link). If this number is 0, there is no link between the channels.
-We will first try to create a graph adjacency matrix for a weighted graph using of the data (137k channel and 449M users) to study the interaction between channel communities.
+- All edges are assigned an integer. This integer corresponds to the number of users that have commented on videos from both the edge's endpoints channels. If this number is 0, we'll delete the edge. 
 
-The size of this matrix is 137’000 \* 137’000 \* 32 bits = 75GB, which is manageable using a server. If not, it’s possible to reduce the size by selecting the most relevant channels.
+We will first create a graph adjacency matrix for a weighted graph (using the data from 137k channel and 449M users) to study the interaction between channels and  communities. Its size will be 137’000 \* 137’000 \* 32 bits = 75GB, which is manageable using a server. If not, it’s possible to reduce the size by selecting the most relevant channels.
 
 To create the matrix, the file `youtube_comments.tsv.gz` will be used. As this is a big data file (8.7 billion comments and over 200 GB uncompressed), the file can’t be open or used with a python script as it is.  To process this data, a C++ script is used to create 2 files:
 1. **Comment_file**: a binary file which has `channel_index` (not ID but an integer representing the channel from the index of `df_timeseries_en.tsv.gz`) and a `comment_count` (it indicates how many times a user has commented on the videos of a particular channel);
