@@ -47,11 +47,11 @@ We will create a graph where:
 - The nodes are the channel ID (given in the `youtube_comments.tsv.gz`)
 - All edges are assigned an integer. This integer corresponds to the number of users that have commented on videos from both the edge's endpoints channels. If this number is 0, we'll delete the edge. 
 
-We will first create a graph adjacency matrix for a weighted graph (using the data from 137k channel and 449M users) to study the interaction between channels and  communities. Its size will be 137’000 \* 137’000 \* 32 bits = 75GB, which is manageable using a server. If we choose to reduce the size anyway, we can select only the most popular channels.
+We will first create a graph adjacency matrix for a weighted graph (using the data from 137k channel and 449M users) to study the interaction between channels and  communities. Its size will be 137’000 \* 137’000 \* 32 bits = 75GB, which is manageable using a [server](https://www.vultr.com/). If we choose to reduce the size anyway, we can select only the most popular channels.
 
 To create the matrix, the file `youtube_comments.tsv.gz` will be used. As this is a big data file (8.7 billion comments and over 200 GB uncompressed), the file can’t be open or used with a python script as it is.  To process this data, a C++ script is used to create 2 files:
-1. **`Comment_file`**: a binary file which has `channel_index` (not ID but an integer representing the channel from the index of `df_timeseries_en.tsv.gz`) and a `comment_count` (it indicates how many times a user has commented on the videos of a particular channel);
-2. **`Position_file`**:  a file with the memory locations of where different authors start in the binary file (if in that index file at position 20 it says 4, that means that for author with id 4, his comments start at position 20 of that other file)
+1. **`Comment_file`**: a binary file which has `channel_index` (not ID but an integer representing the channel from the index of `df_timeseries_en.tsv.gz`) and a `comment_count` (it indicates how many times a user has commented on the videos of a particular channel) ; there is one row for each channel that an authors has commented;
+2. **`Position_file`**:  a file with the memory offset that indicate, for each authors, where the rows related to that author start in the binary file (if in that index file at index 20 it says 4, that means that for author with id 20, his comments start at index 4 of that other file)
 
 <p align="center">
  <img src="./Figures/table_cluster.png"" alt="Table cluster" width=500"/>
