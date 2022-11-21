@@ -16,7 +16,7 @@ As reported by the [New York Times Magazine](https://www.nytimes.com/2017/08/03/
     
 ## Proposed additional datasets 
 We will base the list of far-right ideology channels on the study [“Auditing Radicalization Pathways on Youtube”](https://dlab.epfl.ch/people/west/pub/HortaRibeiro-Ottoni-West-Almeida-Meira_FAT-20.pdf), made in 2020 by Ribeiro et al. Moreover, for the toxicity level, we will use from their [data](https://drive.google.com/drive/folders/10r7nMK0-LAIfZws_jk2IpNdsWcrm-oOg?usp=share_link):
-- The **vd folder**: description of the videos;
+- The **yt folder**: description of the videos;
 - The **cm folder**: comments on each video.  
 
 For clusters, the [YouNiverse dataset](https://zenodo.org/record/4650046#.Y3eNQceZO3-) will be used, especially:
