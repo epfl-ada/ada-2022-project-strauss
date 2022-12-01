@@ -1,0 +1,7 @@
+01.12.2022
+
+Anya-> how to paralelise
+Armelle-> see how to speed things with an alternative to split function with the re librairy, try generalising (having
+the whole structure done so that last thing to do is just running it on the paralelise thing, improve the detoxify part, convert everything to .py file 
+
+Stocker de deux manières-> un fichier avec tous les commentaires, un fichier avec juste le .mean() des commentaires (une vidéo est associée à une ligne) 
