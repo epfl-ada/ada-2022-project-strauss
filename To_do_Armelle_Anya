@@ -6,3 +6,5 @@ the whole structure done so that last thing to do is just running it on the para
 
 Stocker de deux manières-> un fichier avec tous les commentaires, un fichier avec juste le .mean() des commentaires (une vidéo est associée à une ligne) 
 
+02.12.2022
+Anya: GPUs available on Izar, but MPI does not work on it. Only CPUs in Fidis and MPI works on it.
