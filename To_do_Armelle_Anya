@@ -10,3 +10,14 @@ Stocker de deux manières-> un fichier avec tous les commentaires, un fichier av
 Anya: 
 -GPUs available on Izar, but MPI does not work on it. Only CPUs in Fidis and MPI works on it.
 -PyCUDA: create kernels to use blocks and threads. For now, it works only with C++ kernels. I should look for a way to use detoxify in the kernels. 
+
+19.12.2022
+TO DO 
+-website
+-readme
+-git clean
+
+Anya: 
+-write introduction
+-Data story 
+-changed readme
