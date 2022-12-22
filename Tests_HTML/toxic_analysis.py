@@ -734,7 +734,15 @@ df_after2014 = df_final_cat[df_final_cat.upload_date >= pd.to_datetime("2014-01"
 # In the period defined before, we compare the toxicity levels in between each channel-category.
 
 # In[50]:
-
+#confidence interval
+def bootstrap_CI(data, nbr_draws): #the bootstrap function gave by in the lab session solution
+    means = np.zeros(nbr_draws)
+    data = np.array(data)
+    for n in range(nbr_draws):
+        indices = np.random.randint(0, len(data), len(data))
+        data_tmp = data[indices]
+        means[n] = np.nanmean(data_tmp)
+    return [np.nanpercentile(means, 2.5),np.nanpercentile(means, 97.5)]
 
 # prints the categories of toxicity over time. 
 # takes about 45 sec to run
@@ -749,9 +757,25 @@ import io
 app = Dash(__name__)
 df_avg_month = df_after2014.groupby(['month_created', 'Category']).mean()
 
-fig = px.line(df_avg_month, x=df_avg_month.index.get_level_values('month_created'),
+""" fig = px.line(df_avg_month, x=df_avg_month.index.get_level_values('month_created'),
      y='toxicity', color=df_avg_month.index.get_level_values('Category'))
 fig.write_html("test.html")
+fig.show() """
+
+
+traces=[]
+fig = go.Figure()
+subcat = 'toxicity'
+category = 'Alt-lite'
+#for index, subcat in enumerate(list_all_tox):
+#for i, category in enumerate(list_categories):
+df_category = df_after2014[df_after2014.Category == category]
+low, high = bootstrap_CI(df_category.groupby(['month_created'])[subcat])  
+fig.add_traces(go.Scatter(x=df_avg_month.index.get_level_values('month_created'), 
+                    y=df_avg_month[df_avg_month.index.get_level_values('Category') == category][subcat],
+                    mode = 'lines+markers'))#, color=palette[i]))
+
+fig.write_html("test2.html")
 fig.show()
 
 """ 
