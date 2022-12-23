@@ -89,7 +89,7 @@ The repository is structured as follows:
 ```
 
 
-## Organization and Contribution
+## Organization and contribution
 Armelle: toxicity expert 1 (correlation study). Main writer of the datastory. <br />
 Anya: toxicity expert 2 (evolution through time study). Problem formulator, plotted toxicity graphs.<br />
 Bartul: cluster expert 1 and C coder. <br />
