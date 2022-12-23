@@ -2,7 +2,7 @@
 
 ## Website of the Strauss project : 
 
-[Website]([https://www.nytimes.com/2017/08/03/magazine/for-the-new-far-right-youtube-has-become-the-new-talk-radio.html](https://aprakyk.github.io/ada-strauss-website/Homepage))
+[Website]([https://www.nytimes.com/2017/08/03/magazine/for-the-new-far-right-youtube-has-become-the-new-talk-radio.html](https://aprakyk.github.io/ada-strauss-website/Homepage)
 
 ## Abstract
 
