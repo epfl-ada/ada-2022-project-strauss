@@ -76,6 +76,8 @@ To analyze the weighted graph, two measures will be used:
 </p>
 
 
-## Organization
-Armelle & Anya: toxicity  
-Bartul & Ariane: cluster
+## Organization and Contribution
+Armelle: toxicity expert 1 (correlation study). Main writer of the datastory.
+Anya: toxicity expert 2 (evolution through time study). Problem formulator, plotted toxicity graphs.
+Bartul: cluster expert 1 and C coder.
+Ariane: cluster expert 2 and creative website creator.
