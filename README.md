@@ -67,8 +67,8 @@ The goal is to collapse that graph into a weighted channel graph by building the
 </p>
 
 To analyze the weighted graph, two measures will be used:
-1. **Betweenness centrality**: measure of the importance of the channels. A channel with a high betweenness centrality has a lot of control in the network (`networkx` library on python);
-2. **Clustering coefficient**: we'll study both the local and global clustering coefficient to see if the graph is a small-world network (or at least locally).
+1. **Pagerank centrality**: measure of the importance of the channels. A channel with a high rank centrality has a lot of control in the network;
+2. **Clustering coefficient**: we'll study the local coefficient to see if the graph is a small-world network (or at least locally).
 
 
 
