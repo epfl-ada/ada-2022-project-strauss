@@ -1,8 +1,6 @@
-# Youtube’s Toxic Rabbitholes
+# YouTube’s Toxic Rabbitholes
 
-## Website of the Strauss project : 
-
-[Website](https://aprakyk.github.io/ada-strauss-website/Homepage)
+The final website, containing the project datastory, can be found [here](https://aprakyk.github.io/ada-strauss-website/Homepage).
 
 ## Abstract
 
@@ -42,8 +40,8 @@ We will compute the average of each category in the `toxic_score_array` over the
 
 Having these results in hand, we will use them to compare the toxicity of each of the extreme communities (Alt-right, Alt-light, I.D.W.) and of the control group (Media). 
 
-We’ll check how the `toxic_score_array` of the videos is distributed per community. We’ll also investigate how the `toxic_score_array` evolves with regard to the popularity of a channel or video. We’ll define the popularity of a channel and of a video by its number of views (the more views, the more popular).
-Finally we’ll do an analysis over time. We will study the evolutions of the averages (and the distribution) in the `toxic_score_array` of the videos/channels over time. To study this development over time, we’ll group our videos per month based on the upload date.
+We’ll check how the `toxic_score_array` of the videos is distributed per community. We’ll also investigate how the `toxic_score_array` evolves with regard to the popularity of a channel or video. We’ll define the popularity of a channel and of a video by its number of views (the more views, the more popular). We'll also investigate the correlation between the toxicity of the top 25 videos/channels per community with its number of views.
+Finally we’ll do an analysis over time. We will study the evolutions of the averages (and the distribution) in the `toxic_score_array` of the videos/channels over time. To study this development over time, we’ll group our videos per month based on the upload date. We'll also investigate in the study of the toxicity of the top 25 videos per month per community.
 
 ### Clusters
 We will create a graph where:
@@ -81,7 +79,7 @@ To analyze the weighted graph, two measures will be used:
 
 
 ## Organization and Contribution
-Armelle: toxicity expert 1 (correlation study). Main writer of the datastory.
-Anya: toxicity expert 2 (evolution through time study). Problem formulator, plotted toxicity graphs.
-Bartul: cluster expert 1 and C coder.
-Ariane: cluster expert 2 and creative website creator.
+Armelle: toxicity expert 1 (correlation study). Main writer of the datastory. <br />
+Anya: toxicity expert 2 (evolution through time study). Problem formulator, plotted toxicity graphs.<br />
+Bartul: cluster expert 1 and C coder. <br />
+Ariane: cluster expert 2 and creative website creator.<br />
