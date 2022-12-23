@@ -36,3 +36,11 @@ del .\data\out1.bin
 :: ID 5 can we read.
 comment_channel_aggregation.exe .\data\comments_channels_2018.bin .\data\comments_channels_aggregated_2018.bin .\data\comments_channels_aggregated_author_index_2018.bin
 del .\data\comments_channels_2018.bin
+
+:: Run channel_adjecency_part many times in order to compute adjecency matrix in parallel.
+:: Modify string constant in top of the said file to change the parameters.
+channel_adjecency.py
+
+:: Combine channel adjecency parts into a single large file wich contains half of the symmetric matrix
+copy /b .\data\channel_unique_author_* .\data\channel_unique_author_2018.bin
+copy /b .\data\channel_adjacency_* .\data\channel_adjacency_2018.bin
