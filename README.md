@@ -77,6 +77,17 @@ To analyze the weighted graph, two measures will be used:
  <img src="./Figures/timeline2.png" alt="timeline" width=650"/>
 </p>
 
+## Structure of the repository
+
+The repository is structured as follows:
+```
+┣CommentsGraph/ (comments graphs processing scripts)
+┣Data/ (processed data)
+┣Figures/ (figures for the readme)
+┣ToxicityPreProcessing/ (toxicity pre-processing scripts)
+┗Milestone3.ipynb (notebook processing the data in Data and presenting the results)
+```
+
 
 ## Organization and Contribution
 Armelle: toxicity expert 1 (correlation study). Main writer of the datastory. <br />
